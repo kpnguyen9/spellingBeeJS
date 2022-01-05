@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="/styles.css">
-  <title>Document</title>
-</head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img
+            src="/images/bee-image.png"
+            alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+            width="100%"
+            height=""
+          />
+        </a>
+        <h1 class="navbar-item">SPELLING BEE</h1>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    </nav>
 
-<body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="/images/bee-image.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
-          width="100%" height="">
-      </a>
-      <h1 class="navbar-item">SPELLING BEE</h1>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  </nav>
+    <div id="gameboard" class="container content">
+      <p>
+        Click on the letter to generate a word. Then press "Add" to add it to
+        your word bank.
+      </p>
+      <div id="loadingBee" class="">
+        <p>Buzzing to get your letters.....</p>
+        <img src="/images/bee-gif.gif" alt="buzzing bee" srcset="" />
+      </div>
+      <div class="columns is-multiline">
+        <div id="game" class="column is-flex is-flex-direction-column">
+          <div id="word" class="box hide"></div>
+          <div id="letters" class="is-flex is-justify-content-center"></div>
+        </div>
 
-  <div id='gameboard' class='container content'>
-    <p>Click on the letter to generate a word. Then press "Add" to add it to your word bank.</p>
-    <div id='loadingBee' class="">
-      <p>Buzzing to get your letters.....</p>
-      <img src="/images/bee-gif.gif" alt="buzzing bee" srcset="">
-    </div>
-    <div class='columns is-multiline hide'>
-      <div id="game" class='column is-flex is-flex-direction-column'>
-        <div id="word" class='box hide'></div>
-        <div id='letters' class='is-flex is-justify-content-center'>
-
+        <div id="wordsBank" class="column box hide">
+          <h4 id="foundTitle"></h4>
+          <div id="words"></div>
         </div>
       </div>
-
-      <div id="wordsBank" class='column box hide'>
-        <h4 id="foundTitle"></h4>
-        <div id="words">
-
-        </div>
-      </div>
     </div>
 
-  </div>
-
-  <script src="/script.js"></script>
-</body>
-
+    <script src="/script.js"></script>
+  </body>
 </html>
