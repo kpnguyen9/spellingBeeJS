@@ -52,6 +52,7 @@ addButton.innerHTML = "ADD";
 //** NOTE: setTimeout is just to slow the load so you can see it. but you could use it to add a CSS loaders and other neat stuff!! :)
 
 //using EventListener "DOMContentLoaded", load the add buttons
+// window.addEventListener("DOMContentLoaded", addLetterButtons());
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("add button");
@@ -60,7 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 3500);
 });
 
-// window.addEventListener("DOMContentLoaded", addLetterButtons());
+//using an IIFE, load the letter button
+//Why did I put the letters in the IFFE??  HINT: LOOK AT THE CONSOLE LOG AND SEE WHEN IT FIRES.
 
 (() => {
   console.log("iife loaded");
@@ -77,9 +79,49 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 3000);
 })();
 
-//using an IIFE, load the letter button
-//Why did I put the letters in the IFFE??  HINT: LOOK AT THE CONSOLE LOG AND SEE WHEN IT FIRES.
-
 //Step-3 write the listeners to take a letter and add to your word div
 
+let clickedLetter = "";
+
+a_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  clickedLetter = a_button.value;
+  wordDiv.innerHTML += clickedLetter;
+  console.log(clickedLetter, "button clicked");
+});
+
+b_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  clickedLetter = b_button.value;
+  wordDiv.innerHTML += clickedLetter;
+  console.log(clickedLetter, "button clicked");
+});
+
+c_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  clickedLetter = c_button.value;
+  wordDiv.innerHTML += clickedLetter;
+  console.log(clickedLetter, "button clicked");
+});
+
+d_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  clickedLetter = d_button.value;
+  wordDiv.innerHTML += clickedLetter;
+  console.log(clickedLetter, "button clicked");
+});
+
+e_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  clickedLetter = e_button.value;
+  wordDiv.innerHTML += clickedLetter;
+  console.log(clickedLetter, "button clicked");
+});
+
+f_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  clickedLetter = f_button.value;
+  wordDiv.innerHTML += clickedLetter;
+  console.log(clickedLetter, "button clicked");
+});
 //add a function to take your word from the word div and add it to an Array to then add to your Words Bank
