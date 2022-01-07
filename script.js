@@ -9,7 +9,7 @@ const lettersDiv = document.getElementById("letters");
 // get the div items in the wordsBank
 
 const wordsBankDiv = document.querySelector("#wordsBank");
-const foundTitle = document.querySelector("#foundtitle");
+const foundTitle = document.querySelector("#foundTitle");
 const wordsDiv = document.querySelector("#words");
 
 //create your buttons
@@ -125,3 +125,25 @@ f_button.addEventListener("click", (e) => {
   console.log(clickedLetter, "button clicked");
 });
 //add a function to take your word from the word div and add it to an Array to then add to your Words Bank
+
+const wordArr = [];
+let wordCount = 0;
+
+foundTitle.innerHTML = `You have found ${wordCount} words!`;
+wordsBankDiv.appendChild(foundTitle);
+
+addButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  wordArr.push(wordDiv.innerHTML);
+  console.log(wordArr);
+
+  let newWordDiv = document.createElement("div");
+  newWordDiv.setAttribute("id", `${wordCount}`);
+  newWordDiv.classList.add("is-size-2");
+  newWordDiv.innerHTML = wordArr[`${wordCount}`];
+  wordsBankDiv.appendChild(newWordDiv);
+
+  wordCount++;
+  foundTitle.innerHTML = `You have found ${wordCount} words!`;
+  wordDiv.innerHTML = "";
+});
